@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../main.dart'; // Import to access the global navigatorKey
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -12,7 +13,8 @@ class WelcomePageState extends State<WelcomePage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, '/dashboard');
+      // Use the global navigator key to ensure navigation works
+      navigatorKey.currentState?.pushReplacementNamed('/dashboard');
     });
   }
 

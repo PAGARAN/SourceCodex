@@ -16,10 +16,10 @@ final GlobalKey<_MyAppState> appKey = GlobalKey<_MyAppState>();
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 // Track the current page widget to preserve it during rebuilds
-Widget currentPage = const WelcomePage();
+Widget currentPage = const Dashboard();
 
 // Add a variable to track the current route
-String currentRoute = '/';
+String currentRoute = '/dashboard';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -96,7 +96,7 @@ class _MyAppState extends State<MyApp> {
         break;
       case '/':
       default:
-        homePage = const WelcomePage();
+        homePage = const Dashboard();
     }
     
     return MaterialApp(
